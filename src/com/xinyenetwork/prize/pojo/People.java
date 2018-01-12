@@ -13,8 +13,8 @@ public class People {
 	}
 	public People() {
 		super();
-		// TODO 自动生成的构造函数存根
-	}
+		// TODO 鑷姩鐢熸垚鐨勬瀯閫犲嚱鏁板瓨鏍�	
+		}
 	public int getUserid() {
 		return userid;
 	}
