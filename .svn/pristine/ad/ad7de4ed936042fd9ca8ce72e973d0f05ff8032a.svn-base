@@ -1,0 +1,37 @@
+package com.xinyenetwork.prize.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.xinyenetwork.prize.biz.IPrizeBiz;
+import com.xinyenetwork.prize.pojo.Prize;
+import com.xinyenetwork.prize.pojo.Winlist;
+
+@Controller
+@RequestMapping("/")
+
+public class PrizeAction {
+	@Autowired
+	private IPrizeBiz iPrizeBiz;
+
+	
+	@RequestMapping("getPrizeList")
+	public String getPrizeList(Prize prize,Map<String,Object> map) {
+		List<Prize> prizeList = iPrizeBiz.getPrizeList();
+		map.put("prizeList",prizeList);
+		System.out.println(prizeList.size() + "____________________________________________________________");
+		return "/lotterydraw.jsp";
+	}
+	
+	@RequestMapping("getAllWinList")
+	public String getAllWinList(Winlist winlist,Map<String,Object> map){
+		List<Winlist> list = iPrizeBiz.getAllWinList();
+		map.put("list", list);
+		System.out.println(list.size() + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+		return "/lotterydraw.jsp";
+	}
+}

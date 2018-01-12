@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinyenetwork.prize.mapper.PrizeMapper">
+
+	<!-- 获取所有奖项名称 -->
+	<select id="getPrizeList" resultType="com.xinyenetwork.prize.pojo.Prize">
+		select * from prize 
+	</select>
+	
+	<!-- 查询中奖人头像和名字 -->
+	<select id="getAllWinList" resultType="com.xinyenetwork.prize.pojo.Winlist">
+	 select * from winlist 
+	</select>
+</mapper>
